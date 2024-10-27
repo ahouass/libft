@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 09:40:27 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/27 11:54:15 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/27 15:06:55 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 	}
 	while (size >= i)
 	{
-		res[size] = num % 10 + 48;
+		res[size] = num % 10 + '0';
 		num = num / 10;
 		size--;
 	}

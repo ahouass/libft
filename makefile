@@ -13,7 +13,7 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC)
 	$(CC) $(FLAGS) -c $(SRC)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
