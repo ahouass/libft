@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 09:40:27 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/26 13:51:03 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/27 11:54:15 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	size = ft_num_length(n);
-	if (!(res == malloc(size + 1)))
+	res = malloc(size + 1);
+	if (!res)
 		return (NULL);
-	res[size] = '\0';
-	size--;
+	res[size--] = '\0';
 	num = n;
 	if (num < 0)
 	{

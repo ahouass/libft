@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:33:32 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/26 13:46:05 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/27 11:40:19 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	size_t	i;
 	char	*sub;
 
 	i = 0;

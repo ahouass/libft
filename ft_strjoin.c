@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:49:56 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/26 13:50:43 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/27 11:56:19 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	int		l1;
-	int		l2;
 	char	*str;
 
 	i = 0;
 	j = 0;
-	l1 = ft_strlen(s1);
-	l2 = ft_strlen(s2);
-	if (!(str == malloc(l1 + l2 + 1)))
+	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
 		return (NULL);
 	while (s1[i])
 	{
