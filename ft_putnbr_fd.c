@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:43:47 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/26 13:34:31 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/27 13:25:41 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == INT_MIN)
+	long	num;
+
+	num = n;
+	if (num == -2147483648)
 		ft_putstr_fd("-2147483648", fd);
 	else if (n < 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:32:57 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/26 13:19:26 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/27 14:41:24 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,13 @@ void	*ft_calloc(size_t n, size_t size)
 		return (0);
 	ft_bzero(p, size * n);
 	return (p);
+}
+#include <stdio.h>
+int main()
+{
+	void *ptr;
+	//ft_calloc(1,1);
+	//ptr = calloc(641654154354, 641654154354);
+	ptr = ft_calloc(641654154354, 641654154354);
+
 }
