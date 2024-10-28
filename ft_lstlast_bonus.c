@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 11:44:57 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/28 09:28:08 by ahouass          ###   ########.fr       */
+/*   Created: 2024/10/28 10:16:43 by ahouass           #+#    #+#             */
+/*   Updated: 2024/10/28 14:21:43 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-	size_t	j;
-
-	j = 0;
-	i = ft_strlen(dst);
-	if (i >= size || size <= 0)
-		return (i + ft_strlen(src));
-	while (src[j] && i < size - 1)
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(dst) + ft_strlen(src));
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

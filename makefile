@@ -13,10 +13,11 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(FLAGS) -c $(SRC)
+$(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+
+%.o: %.c libft.h
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS)

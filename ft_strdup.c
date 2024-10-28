@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:15:24 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/27 16:28:39 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/28 10:12:14 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,4 @@ char	*ft_strdup(const char *s)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	char *str = strdup(NULL);
-	printf("%s\n", str);
 }

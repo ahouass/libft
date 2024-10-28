@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 11:44:57 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/28 09:28:08 by ahouass          ###   ########.fr       */
+/*   Created: 2024/10/28 10:45:09 by ahouass           #+#    #+#             */
+/*   Updated: 2024/10/28 11:35:54 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t	i;
-	size_t	j;
-
-	j = 0;
-	i = ft_strlen(dst);
-	if (i >= size || size <= 0)
-		return (i + ft_strlen(src));
-	while (src[j] && i < size - 1)
+	if (lst && del)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		del(lst->content);
+		free(lst);
 	}
-	dst[i] = '\0';
-	return (ft_strlen(dst) + ft_strlen(src));
 }

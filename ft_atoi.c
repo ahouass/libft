@@ -6,9 +6,11 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:18:41 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/27 13:27:49 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/28 15:56:52 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
