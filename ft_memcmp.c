@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 12:52:22 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/29 13:23:27 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/29 16:05:21 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (d1[i] != d2[i])
-		{
-			if (d1[i] > d2[i])
-				return (1);
-			return (-1);
-		}
+			return ((unsigned char)d1[i] - (unsigned char)d2[i]);
 		i++;
 	}
 	return (0);
