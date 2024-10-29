@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:28:01 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/29 14:22:51 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/29 15:22:09 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*d;
 	char	*s;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	d = (char *)dest;
