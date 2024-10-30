@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:32:57 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/28 10:14:12 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/30 15:15:22 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*p;
 
-	if (n == 0 || size == 0)
-		return (0);
 	p = malloc(n * size);
 	if (!p)
 		return (0);
