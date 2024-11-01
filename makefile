@@ -13,21 +13,21 @@ BONUS_OBJS = $(BONUS_SRC:%.c=%.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-CC = gcc
+CC = cc
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $?
 
-bonus: $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $?
 
 %.o: %.c libft.h
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)

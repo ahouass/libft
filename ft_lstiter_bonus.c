@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:51:42 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/28 15:09:54 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/10/31 14:53:27 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp;
-
-	if (lst != NULL && !f)
+	if (!lst || !f)
 		return ;
-	tmp = lst;
-	while (tmp != NULL)
+	while (lst != NULL)
 	{
-		f(tmp->content);
-		tmp = tmp->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }
