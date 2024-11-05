@@ -20,7 +20,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $?
 
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	ar rcs $(NAME) $?
 
 %.o: %.c libft.h
@@ -33,5 +33,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean bonus re
