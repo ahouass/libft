@@ -6,24 +6,20 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:51:48 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/26 15:31:43 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/11/06 12:56:39 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**ft_freeup(char **strs)
+static void	ft_freeup(char **strs, int i)
 {
-	int	i;
-
-	i = 0;
-	while (strs[i] != '\0')
+	while (i >= 0)
 	{
 		free(strs[i]);
-		i++;
+		i--;
 	}
 	free(strs);
-	return (NULL);
 }
 
 static int	ft_count_words(char const *str, char c)
@@ -51,19 +47,14 @@ static int	ft_count_words(char const *str, char c)
 	return (counter);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_fill(char **arr, char const *s, char c)
 {
 	int		i;
 	int		j;
 	int		k;
-	char	**arr;
 
-	arr = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
-	if (!arr)
-		return (NULL);
 	i = 0;
 	j = 0;
-	k = 0;
 	while (i < ft_count_words(s, c))
 	{
 		while (s[j] == c && s[j])
@@ -73,9 +64,27 @@ char	**ft_split(char const *s, char c)
 			j++;
 		arr[i] = ft_substr(s, k, j - k);
 		if (!arr[i])
-			return (ft_freeup(arr));
+		{
+			ft_freeup(arr, i - 1);
+			return (NULL);
+		}
 		i++;
 	}
 	arr[i] = 0;
+	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+
+	if (!s)
+		return (NULL);
+	arr = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	arr = ft_fill(arr, s, c);
+	if (!arr)
+		return (NULL);
 	return (arr);
 }

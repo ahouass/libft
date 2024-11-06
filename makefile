@@ -22,12 +22,13 @@ $(NAME): $(OBJS)
 
 bonus: $(BONUS_OBJS)
 	ar rcs $(NAME) $?
+	@touch bonus
 
 %.o: %.c libft.h
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS) bonus
 
 fclean: clean
 	rm -f $(NAME)

@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:35:42 by ahouass           #+#    #+#             */
-/*   Updated: 2024/10/26 13:34:48 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/11/06 11:31:00 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (!s)
 		return ;
 	write(fd, s, ft_strlen(s));

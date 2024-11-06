@@ -6,7 +6,7 @@
 /*   By: ahouass <ahouass@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:13:12 by ahouass           #+#    #+#             */
-/*   Updated: 2024/11/05 12:47:59 by ahouass          ###   ########.fr       */
+/*   Updated: 2024/11/06 14:38:11 by ahouass          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
-	int		l2;
 
 	if (!s1 || !set)
 		return (NULL);
-	l2 = ft_strlen(set);
 	i = 0;
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
